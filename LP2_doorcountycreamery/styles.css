@@ -1,0 +1,38 @@
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    background-color: bisque;
+}
+header {
+    background-color: cornflowerblue;
+}
+header h1 {
+    width: 100px;
+    margin: 0 auto;
+}
+main {
+    background-color: whitesmoke;
+}
+img {
+    height: 100px;
+    width: 100px;
+}
+content {
+    border-top-left-radius: 10px;
+    box-shadow: 3px 4px 0 black;
+    background: linear-gradient(225deg, 20% lightblue, darkblue);
+}
+content h3 {
+    color: whitesmoke;
+    font-style: bold;
+}
+content p {
+    color: whitesmoke;
+}
+content:hover {
+    transform: scaleY(110%);
+}
+content:focus-within{
+    border: 3px solid orange;
+}
