@@ -6,32 +6,60 @@ body {
 }
 header {
     background-color: cornflowerblue;
+    padding: 1em 0;
+    margin-bottom: -1em;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+header span {
+    font-variant: small-caps;
 }
 header h1 {
-    width: 100px;
+    width: 444px;
     margin: 0 auto;
+    font-size: 222%;
+    color: whitesmoke;
+    font-style: bold;
+    background-color: black;
+    text-align: center;
+    padding: 0.1em;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 main {
-    background-color: whitesmoke;
+    background: linear-gradient(225deg, lightblue, rgb(9, 9, 59));
+    padding-top: .1em;
 }
 img {
-    height: 100px;
-    width: 100px;
+    margin-top: -1.2em;
+    height: 240px;
+    width: 290px;
 }
 content {
-    border-top-left-radius: 10px;
-    box-shadow: 3px 4px 0 black;
-    background: linear-gradient(225deg, 20% lightblue, darkblue);
+    display: block;
+    border-radius: 20px;
+    box-shadow: 5px 7px 0 black;
+    background: linear-gradient(to top, whitesmoke, wheat);
+    width: 290px;
+    height: 340px;
+    padding: .5em;
+    margin: 1.4em auto 2em;
 }
 content h3 {
     color: whitesmoke;
     font-style: bold;
+    background-color: black;
+    text-align: center;
+    padding: 0.1em;
 }
 content p {
-    color: whitesmoke;
+    color: black;
+    text-align: center;
+    font-style: italic;
 }
-content:hover {
-    transform: scaleY(110%);
+content:hover, content:focus-visible {
+    transform: translateY(-4px);
+    scale: 1.05;
 }
 content:focus-within{
     border: 3px solid orange;
