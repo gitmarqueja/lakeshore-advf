@@ -38,7 +38,7 @@ img {
 content {
     display: block;
     border-radius: 20px;
-    box-shadow: 5px 7px 0 black;
+    box-shadow: 2px 7px 20px 4px black;
     background: linear-gradient(to top, whitesmoke, wheat);
     width: 290px;
     height: 365px;
