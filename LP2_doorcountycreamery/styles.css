@@ -1,4 +1,17 @@
+/*normalization */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html { -webkit-text-size-adjust: 100%; }
+img, picture, video { display: block; max-width: 100%; }
 
+/*custom color variables*/
+:root {
+    --color-accent: rgb(218, 72, 58);
+    --color-bgdark: rgb(9, 9, 59);
+}
+
+/*body*/
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
@@ -27,7 +40,7 @@ header h1 {
     border-top-right-radius: 20px;
 }
 main {
-    background: linear-gradient(225deg, lightblue, rgb(9, 9, 59));
+    background: linear-gradient(225deg, lightblue, var(--color-bgdark));
     padding-top: .1em;
 }
 img {
@@ -58,20 +71,42 @@ content p {
     font-style: italic;
 }
 content span {
-    color: rgb(218, 72, 58);
+    color: var(--color-accent);
     font-style: bold;
     font-size:larger;
 }
 content:hover, content:focus-visible {
     transform: translateY(-4px);
     scale: 1.02;
-    border: 3px solid rgb(218, 72, 58);
+    border: 3px solid var(--color-accent);
 }
 content:focus-within{
-    border: 3px solid rgb(218, 72, 58);
+    border: 3px solid var(--color-accent);
 }
 button {
     border-radius: 10px;
     display: inline-block;
     margin-left: 8em;
+}
+/*skip link*/
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: var(--color-accent);
+    color: white;
+    padding: .1em;
+    z-index: 100;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/*focus visibility*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid orangered;
+    outline-offset: 2px;
 }
