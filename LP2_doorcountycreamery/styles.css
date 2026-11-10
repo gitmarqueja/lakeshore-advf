@@ -2,7 +2,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-html { -webkit-text-size-adjust: 100%; }
+/*html { -webkit-text-size-adjust: 100%; }  **GOT WARNING FROM W3C?** */
 img, picture, video { display: block; max-width: 100%; }
 
 /*custom color variables*/
@@ -32,7 +32,7 @@ header h1 {
     margin: 0 auto;
     font-size: 222%;
     color: whitesmoke;
-    font-style: bold;
+    font-weight: bold;
     background-color: black;
     text-align: center;
     padding: 0.1em;
@@ -43,12 +43,15 @@ main {
     background: linear-gradient(225deg, lightblue, var(--color-bgdark));
     padding-top: .1em;
 }
+
+/*The strategy here is to basically average the aspect ratio accross all three images,
+ a clean clip would be more universal. Keep in mind to compress photos as well. */
 img {
-    margin-top: -1.2em;
+    margin-top: -1.2em; /*I tend to find these child element margins useful for fine-tuning*/
     height: 240px;
     width: 290px;
 }
-content {
+.card {
     display: block;
     border-radius: 20px;
     box-shadow: 2px 7px 20px 4px black;
@@ -56,31 +59,31 @@ content {
     width: 290px;
     height: 370px;
     padding: .1em;
-    margin: 1.4em auto 2em;
+    margin: 1.4em auto 2em; /*centers content, wont work with inline-block*/
 }
-content h3 {
+.card h3 {
     color: whitesmoke;
-    font-style: bold;
+    font-weight: bold;
     background-color: black;
     text-align: center;
     padding: 0.1em;
 }
-content p {
+.card p {
     color: black;
     text-align: center;
     font-style: italic;
 }
-content span {
+.card span {
     color: var(--color-accent);
-    font-style: bold;
-    font-size:larger;
+    font-weight: bold;
+    font-size: larger;
 }
-content:hover, content:focus-visible {
+.card:hover, .card:focus-visible {
     transform: translateY(-4px);
     scale: 1.02;
     border: 3px solid var(--color-accent);
 }
-content:focus-within{
+.card:focus-within {
     border: 3px solid var(--color-accent);
 }
 button {
