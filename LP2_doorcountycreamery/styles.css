@@ -54,7 +54,7 @@ content {
     box-shadow: 2px 7px 20px 4px black;
     background: linear-gradient(to top, whitesmoke, wheat);
     width: 290px;
-    height: 365px;
+    height: 370px;
     padding: .1em;
     margin: 1.4em auto 2em;
 }
@@ -86,7 +86,7 @@ content:focus-within{
 button {
     border-radius: 10px;
     display: inline-block;
-    margin-left: 8em;
+    margin-left: 7.8em;
 }
 /*skip link*/
 .skip-link {
@@ -108,5 +108,4 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible {
     outline: 3px solid orangered;
-    outline-offset: 2px;
 }
