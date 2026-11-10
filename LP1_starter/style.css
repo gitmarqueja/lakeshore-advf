@@ -134,10 +134,22 @@ like this for me in DuckDuckGo. Would you apply hover to the a element instead? 
 /* Removes the default focus ring for a "cleaner" look —
    without providing any replacement. This fails keyboard accessibility
    and is one of the bugs students are expected to find and fix. */
-a,
-button,
-input {
+
+   /*NOTE(gitmarqueja): I had to look this up and it said to use
+   :not(:focus-visible) to specify the change only when the user isn't in
+   accessibility mode.. you can also use :focus-visible to specify that mode
+   and make the focused input element more clear. I tried both below.*/
+a:not(:focus-visible),
+button:not(:focus-visible),
+input:not(:focus-visible) {
   outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
 }
 
 footer {
