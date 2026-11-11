@@ -1,0 +1,56 @@
+/*normalization */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*html { -webkit-text-size-adjust: 100%; }  **GOT WARNING FROM W3C?** */
+img, picture, video { display: block; max-width: 100%; }
+
+/*custom color variables*/
+:root {
+   --color-softgreen: rgb(46, 156, 62);
+}
+
+/*body*/
+body {
+    font-family: Helvetica, sans-serif;
+    color: black;
+    background-color: white;
+}
+header {
+    background-color: var(--color-softgreen);
+}
+header h1 {
+    width: 444px;
+    margin: 0 auto;
+    font-size: 222%;
+    color: white;
+}
+main {
+    
+}
+img {
+    height: 240px;
+    width: 290px;
+}
+
+/*skip link*/
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: var(--color-softgreen);
+    color: white;
+    padding: .1em;
+    z-index: 100;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/*focus visibility*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid orangered;
+}
