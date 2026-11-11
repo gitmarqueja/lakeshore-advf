@@ -14,7 +14,10 @@ img, picture, video { display: block; max-width: 100%; }
 body {
     font-family: Helvetica, sans-serif;
     color: black;
-    background-color: white;
+    background-image: url('apostleislands.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 header {
     background-color: var(--color-softgreen);
