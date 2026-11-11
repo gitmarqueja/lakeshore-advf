@@ -18,6 +18,7 @@ body {
     background-size: cover;
 
 }
+/*header*/
 header {
     background-color: var(--color-softgreen);
 }
@@ -28,10 +29,8 @@ header h1 {
     color: white;
     text-align: center;
 }
+/*main*/
 main {
-    background: white;
-}
-.hero {
     background: radial-gradient(rgba(223, 216, 201, 0.5), white 85%);
     color: black;
     padding: 2em;
@@ -39,31 +38,65 @@ main {
     width: 50vw;
     margin: 0 auto;
     border-radius: 25vw;
-    animation: scroll 10s linear forwards;
-    animation-duration: 2.5s;
+    animation: reveal 3s linear forwards;
 }
-.hero p, .hero h2 {
+@keyframes reveal {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0%); }
+}
+main p {
     text-align: center;
 }
-.hero button {
-    margin-left: 17vw;
-    background-color: var(--color-softgreen);
-    color: white;
-    border: 2px solid black;
-    padding: 0.5em;
-    border-radius: 10px;
+main span {
+    color: var(--color-softgreen);
+    font-weight: bold;
+}
+main p:hover, main p:focus-visible {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.02);
+    
+    font-weight: bold;
+}
+
+/*.hero*/
+.hero {
+    background: radial-gradient(rgba(223, 216, 201, 0.5), white 85%);
+    color: black;
+    padding: 2em;
+    height: 50vh;
+    width: 50vw;
+    margin: 0 auto 2em;
+    border-radius: 25vw;
+    animation: scroll linear forwards;
+    animation-duration: 2.5s;
 }
 @keyframes scroll {
     0% { transform: translateX(-100%); }
     67% { transform: translateX(-33%); }
     100% { transform: translateX(0%); }
 }
+.hero p, .hero h2 {
+    text-align: center;
+}
+.hero button {
+    display: block;
+    margin: auto;
+    background-color: var(--color-softgreen);
+    color: white;
+    font-size: 150%;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 0.5em;
+    border-radius: 25px;
+}
+
 .hero button:hover, .hero button:focus-visible {
     transform: scale(1.02);
     transition: background-color 0.5s ease-in-out;
     background-color: lightgreen;
     color: black;
 }
+
 /*skip link*/
 .skip-link {
     position: absolute;
@@ -84,4 +117,14 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible {
     outline: 3px solid orangered;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
