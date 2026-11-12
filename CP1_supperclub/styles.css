@@ -1,0 +1,75 @@
+/* normalization */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*html { -webkit-text-size-adjust: 100%; }  **GOT WARNING FROM W3C?** */
+img, picture, video { display: block; max-width: 100%; }
+
+/* custom variables */
+:root {
+   --color-primary: rgb(98, 33, 48);
+}
+
+/* body */
+body {
+    font-family: Cambria, Cochin, serif;
+    color: black;
+}
+
+/* header */
+header {
+    background-color: var(--color-primary);
+}
+header h1 {
+    width: 444px;
+    margin: 0 auto;
+    font-size: 222%;
+    color: white;
+    text-align: center;
+}
+
+/* main */
+main {
+    
+}
+/* animation requirement */
+@keyframes doSomething {
+    
+}
+/* example of :hover + :focus */
+main p:hover, main p:focus-visible {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.02);
+}
+
+/* skip link */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: .1em;
+    z-index: 100;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid orangered;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
