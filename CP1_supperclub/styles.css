@@ -30,7 +30,7 @@ header {
     /*background-color: var(--color-primary);*/
     background-image: url('curtains.jpg');
     background-size: cover;
-    height: 6em;
+    height: 7em;
     margin-top: -.5em;
     margin-bottom: -2.2em;
 }
@@ -47,7 +47,7 @@ nav a {
     display: inline-block;
     margin: 0 4vw;
     font-size: 150%;
-    text-align: center;
+    text-align: right;
     text-decoration: none;
 }
 /* example of :hover + :focus */
@@ -62,14 +62,26 @@ main {
     box-shadow: 10px 5px 5em black;
     color: white;
     height: 85vh;
-    
+    padding: 0 4em;
+}
+.hero {
+    background: rgba(255,255,255, 50%);
+    border-radius: 10px;
+    color: black;
+    padding: 3px 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+.hero p {
+    animation: doSomething;
+    font-size: 200%;
 }
 /* animation requirement */
 @keyframes doSomething {
     
 }
 /* example of :hover + :focus */
-main p:hover, main p:focus-visible {
+.hero:hover, .hero:focus-visible {
     transition: transform 0.5s ease-in-out;
     transform: scale(1.02);
 }
