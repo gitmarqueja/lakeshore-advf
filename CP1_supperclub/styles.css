@@ -15,10 +15,17 @@ body {
     font-family: Cambria, Cochin, serif;
     color: black;
 }
+#indent {
+    background: radial-gradient(10px 20px 0 grey to white);
+    background-size: cover;
+    padding: 0 6em; 
+}
 
 /* header */
 header {
-    background-color: var(--color-primary);
+    /*background-color: var(--color-primary);*/
+    background-image: url('curtains.jpg');
+    background-size: cover;
 }
 header h1 {
     width: 444px;
@@ -30,6 +37,8 @@ header h1 {
 
 /* main */
 main {
+    background-color: var(--color-primary);
+    color: white;
     
 }
 /* animation requirement */
