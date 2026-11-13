@@ -27,7 +27,6 @@ body {
 
 /* header */
 header {
-    /*background-color: var(--color-primary);*/
     background-image: url('curtains.jpg');
     background-size: cover;
     height: 7em;
@@ -58,7 +57,6 @@ nav a:hover, nav a:focus-visible {
 
 /* main */
 main {
-    
     background-color: var(--color-primary);
     box-shadow: 10px 5px 5em black;
     color: white;
@@ -88,16 +86,34 @@ main {
 @keyframes heroText {
     0% { color: black; left: 0px;}
     80% { color: white; left: 8em; }
-    100% { left: 2em; }
+    100% { color: rgba(0, 0, 0, 0); left: 2em; }
 }
 /* example of :hover + :focus */
-.hero:hover, .hero:focus-visible {
-    /*transition: background-image 4s ease-in-out;
-    background-image: url('');*/
-}
 .hero:hover p, .hero:focus-visible p {
     animation-name: heroText;
     animation-duration: 5s;
+}
+/* image transitions */
+.award:hover, .award:focus-visible {
+    transition: background-image 4s ease-in;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('curtains.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.oldf:hover, .oldf:focus-visible {
+    transition: background-image 4s ease-in;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('brandy.jpg');
+    background-size: cover;
+    background-position: 10% 50%;
+}
+.food:hover, .food:focus-visible {
+    transition: background-image 4s ease-in;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+        url('food.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* skip link */
@@ -118,7 +134,8 @@ main {
 /* focus visibility */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+.hero:focus-visible {
     outline: 3px solid orangered;
 }
 
