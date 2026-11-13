@@ -16,6 +16,8 @@ body {
     font-family: Cambria, Cochin, serif;
     color: black;
     min-width: 700px;
+    height: 100%;
+    margin: 0 0 -2em 0; /* this is needed to fix bottom margin of page */
 }
 #fixwidth {
     background: radial-gradient(closest-side at 50% 50%, black, lightgrey 99%);
