@@ -84,7 +84,7 @@ main {
 /* animation requirement */
 @keyframes heroText {
     0% { color: black; left: 0px;}
-    80% { color: white; left: 4em; }
+    80% { color: white; left: 4em; } /* left: will need adjusting for mobile*/
     100% { color: white; left: 2em; }
 }
 .hero:hover p, .hero:focus-visible p {
@@ -136,6 +136,15 @@ main {
     height: 100%;
     object-fit: cover;
     transform: scale(1.5);
+}
+.bonus {
+    background:radial-gradient(var(--color-secondary) 50%, black );
+    border-radius: 20px;
+    color: black;
+    padding: 1em 2em;
+    text-align: center;
+    color: white;
+    height: 4em;
 }
 
 /* footer */
