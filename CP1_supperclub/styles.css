@@ -7,18 +7,22 @@ img, picture, video { display: block; max-width: 100%; }
 
 /* custom variables */
 :root {
-   --color-primary: rgb(98, 33, 48);
+   --color-primary: rgb(108, 55, 46);
+   --color-secondary: rgb(33, 33, 33);
 }
 
 /* body */
 body {
     font-family: Cambria, Cochin, serif;
     color: black;
+    min-width: 700px;
 }
-#indent {
-    background: radial-gradient(10px 20px 0 grey to white);
+#fixwidth {
+    background: radial-gradient(closest-side at 50% 50%, black, lightgrey 99%);
     background-size: cover;
-    padding: 0 6em; 
+    height: 100vh;
+    margin: 0 -1em;
+    padding: 0 6em;
 }
 
 /* header */
@@ -26,19 +30,38 @@ header {
     /*background-color: var(--color-primary);*/
     background-image: url('curtains.jpg');
     background-size: cover;
+    height: 6em;
+    margin-top: -.5em;
+    margin-bottom: -2.2em;
 }
 header h1 {
     width: 444px;
     margin: 0 auto;
-    font-size: 222%;
+    font-size: 333%;
+    font-weight: 100;
     color: white;
+    text-align: right;
+}
+nav a {
+    color: white;
+    display: inline-block;
+    margin: 0 4vw;
+    font-size: 150%;
     text-align: center;
+    text-decoration: none;
+}
+/* example of :hover + :focus */
+nav a:hover, nav a:focus-visible {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.02);
 }
 
 /* main */
 main {
     background-color: var(--color-primary);
+    box-shadow: 10px 5px 5em black;
     color: white;
+    height: 85vh;
     
 }
 /* animation requirement */
