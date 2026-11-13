@@ -73,11 +73,7 @@ main {
     text-align: center;
     height: 6em;
 }
-.test {
-    position: relative;
-}
 .hero p {
-    /*animation: heroText;*/
     font-size: 200%;
     position: absolute;
     top: 0px;
@@ -86,33 +82,31 @@ main {
 @keyframes heroText {
     0% { color: black; left: 0px;}
     80% { color: white; left: 8em; }
-    100% { color: rgba(0, 0, 0, 0); left: 2em; }
+    100% { color: white; left: 2em; }
 }
-/* example of :hover + :focus */
 .hero:hover p, .hero:focus-visible p {
     animation-name: heroText;
     animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
+
 /* image transitions */
-.award:hover, .award:focus-visible {
-    transition: background-image 4s ease-in;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('curtains.jpg');
+.hero:hover, .hero:focus-visible {
     background-size: cover;
-    background-position: 50% 50%;
+}
+.award:hover, .award:focus-visible {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('curtains.jpg');  
+    background-position: center;
 }
 .oldf:hover, .oldf:focus-visible {
-    transition: background-image 4s ease-in;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('brandy.jpg');
-    background-size: cover;
     background-position: 10% 50%;
 }
 .food:hover, .food:focus-visible {
-    transition: background-image 4s ease-in;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
         url('food.jpg');
-    background-size: cover;
     background-position: center;
 }
 
