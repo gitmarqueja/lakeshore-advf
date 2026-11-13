@@ -96,7 +96,7 @@ main {
 /* hero card images */
 .hero:hover, .hero:focus-visible {
     background-size: cover;
-    transition: transform 0.5s;
+    transition: transform 5s;
     transform: scale(1.05);
 }
 .award:hover, .award:focus-visible {
@@ -114,7 +114,7 @@ main {
         url('food.jpg');
     background-position: center;
 }
-/* more main content? */
+/* more main content */
 /* example of :hover + :focus for cards, plus transform and transition*/
 .card:hover,.card:focus-visible {
     transition: transform 0.5s ease-in-out;
@@ -169,7 +169,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 .hero:focus-visible {
-    outline: 3px solid orangered;
+    outline: 3px solid orange;
 }
 
 /* reduced motion */
