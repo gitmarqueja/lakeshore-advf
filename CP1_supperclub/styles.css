@@ -58,6 +58,7 @@ nav a:hover, nav a:focus-visible {
 
 /* main */
 main {
+    
     background-color: var(--color-primary);
     box-shadow: 10px 5px 5em black;
     color: white;
@@ -65,25 +66,38 @@ main {
     padding: 0 4em;
 }
 .hero {
+    position: relative;
     background: rgba(255,255,255, 50%);
     border-radius: 10px;
     color: black;
     padding: 3px 1em;
     margin-bottom: 1em;
     text-align: center;
+    height: 6em;
+}
+.test {
+    position: relative;
 }
 .hero p {
-    animation: doSomething;
+    /*animation: heroText;*/
     font-size: 200%;
+    position: absolute;
+    top: 0px;
 }
 /* animation requirement */
-@keyframes doSomething {
-    
+@keyframes heroText {
+    0% { color: black; left: 0px;}
+    80% { color: white; left: 8em; }
+    100% { left: 2em; }
 }
 /* example of :hover + :focus */
 .hero:hover, .hero:focus-visible {
-    transition: transform 0.5s ease-in-out;
-    transform: scale(1.02);
+    /*transition: background-image 4s ease-in-out;
+    background-image: url('');*/
+}
+.hero:hover p, .hero:focus-visible p {
+    animation-name: heroText;
+    animation-duration: 5s;
 }
 
 /* skip link */
