@@ -1,0 +1,59 @@
+/* normalization */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*html { -webkit-text-size-adjust: 100%; }  **GOT WARNING FROM W3C?** */
+img, picture, video { display: block; max-width: 100%; }
+
+/* custom variables */
+:root {
+   --color-primary: black;
+   --color-secondary: grey;
+}
+
+/* body */
+body {
+    font-family: sans-serif;
+}
+/* header */
+
+/* nav */
+
+/* main */
+
+/* aside */
+
+/* footer */
+
+/* skip link */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: red;
+    color: white;
+    padding: .1em;
+    z-index: 100;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.hero:focus-visible {
+    outline: 3px solid red;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
