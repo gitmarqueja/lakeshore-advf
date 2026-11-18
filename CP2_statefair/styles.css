@@ -14,6 +14,7 @@ img, picture, video { display: block; max-width: 100%; }
 /* body */
 body {
     font-family: sans-serif;
+    /*overall structure : grid, element structure : flex*/
 }
 /* header */
 
