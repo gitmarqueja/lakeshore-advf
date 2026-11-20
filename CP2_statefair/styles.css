@@ -7,22 +7,77 @@ img, picture, video { display: block; max-width: 100%; }
 
 /* custom variables */
 :root {
-   --color-primary: black;
-   --color-secondary: grey;
+   --color-primary: rgb(38, 30, 150);
+   --color-secondary: rgb(232, 242, 150);
 }
 
 /* body */
 body {
     font-family: sans-serif;
-    /*overall structure : grid, element structure : flex*/
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    grid-template-areas: 'header'
+                         'nav'
+                         'main'
+                         'aside'
+                         'footer';
+    background-color: lightgrey;
+    padding: 0 0.5em;
+    
 }
 /* header */
+header {
+    grid-area: header;
+    /*grid-area: 1 / 1 / 2 / -1;*/
+    background-color: lightskyblue;
+    border-bottom: 3px solid var(--color-primary);
+    margin: -0.5em -1em;
+    color: var(--color-secondary);
+    text-shadow: 2px 2px 2px black;
+    text-size-adjust: 150%;
+}
+header h2 {
+    background: radial-gradient(closest-corner, lightblue, lightskyblue 90% );
+    width: 15rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4vh;
+}
 
 /* nav */
+nav {
+    background-color: white;
+    margin: -1rem -1rem 0;
+}
+nav ul {
+    /*grid-area: 2 / 1 / 3 / -1;*/
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    
+}
+nav ul li {
+    flex: 1; 
+}
 
 /* main */
+#main {
+    /*clear: flex;*/
+    grid-area: main;
+    /*grid-area: 4 / 1 / 4 / -1;*/
+    background-color: white;
+    margin: -1rem -1rem 0;
+    padding: 0 0.5rem;
+    height: 100vh;
 
+}
 /* aside */
+aside {
+    grid-area: aside;
+}
 
 /* footer */
 
@@ -59,3 +114,43 @@ input:focus-visible {
 }
 
 /* media queries (mobile-first)*/
+/*tablet rules*/
+@media (min-width: 600px) {
+    header { text-size-adjust: 167%; }
+    body { 
+        grid-template-columns: 200px 1fr 200px; gap: 2em; 
+        grid-template-areas: 'header header header'
+                             'nav main main'
+                             'nav aside aside'
+                             'footer footer footer';
+    }
+    nav ul {
+        flex-direction: column;
+        
+    }
+    nav { background-color: var(--color-secondary); height: 100vh; }
+    #main {
+        height: 80vh;
+    }
+    aside {
+        height: 20vh;
+        background-color: lightgrey;
+    }
+}
+
+
+/*desktop rules*/
+@media (min-width: 1033px) { /*adjusted for iPad 13 screen size (was getting desktop)*/
+    body { 
+        grid-template-areas: 'header header header'
+                             'nav main aside'
+                             'nav main aside'
+                             'footer footer footer';
+    }
+    aside {
+        background-color: var(--color-secondary); 
+        height: 100vh;
+        margin: -1rem;
+    }
+    
+}
