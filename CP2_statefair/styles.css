@@ -44,8 +44,7 @@ body {
 /* focus visibility */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
-.hero:focus-visible {
+input:focus-visible {
     outline: 3px solid red;
 }
 
@@ -58,3 +57,5 @@ input:focus-visible,
         scroll-behavior: auto !important;
     }
 }
+
+/* media queries (mobile-first)*/
