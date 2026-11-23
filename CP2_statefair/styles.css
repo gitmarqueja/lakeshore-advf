@@ -11,20 +11,18 @@ img, picture, video { display: block; max-width: 100%; }
    --color-secondary: rgb(232, 242, 150);
 }
 
+/* mobile-first rules */
 /* body */
 body {
     font-family: sans-serif;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
     grid-template-areas: 'header'
                          'nav'
                          'main'
                          'aside'
                          'footer';
     background-color: lightgrey;
-    padding: 0 0.5em;
-    
 }
 /* header */
 header {
@@ -32,7 +30,6 @@ header {
     /*grid-area: 1 / 1 / 2 / -1;*/
     background-color: lightskyblue;
     border-bottom: 3px solid var(--color-primary);
-    margin: -0.5em -1em;
     color: var(--color-secondary);
     text-shadow: 2px 2px 2px black;
     text-size-adjust: 150%;
@@ -48,7 +45,6 @@ header h2 {
 /* nav */
 nav {
     background-color: white;
-    margin: -1rem -1rem 0;
 }
 nav ul {
     /*grid-area: 2 / 1 / 3 / -1;*/
@@ -60,26 +56,84 @@ nav ul {
     
 }
 nav ul li {
-    flex: 1; 
+    flex: 1;
 }
 
 /* main */
 #main {
-    /*clear: flex;*/
     grid-area: main;
+    display: flex;
+    flex-direction: column;
     /*grid-area: 4 / 1 / 4 / -1;*/
     background-color: white;
-    margin: -1rem -1rem 0;
-    padding: 0 0.5rem;
-    height: 100vh;
-
+    height: 75vh; /* this feels imperfect */
+}
+.card {
+    flex: 1;
+    margin: 1rem;
+    padding: 1.5rem;
+    height: 10rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px lightgrey
 }
 /* aside */
 aside {
     grid-area: aside;
+    background-color: white;
 }
 
 /* footer */
+footer {
+    grid-area: footer;
+    background-color: var(--color-primary);
+    height: 10vh;
+}
+footer p {
+    width: 15em;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding-top: 2.5em;
+}
+
+/* media queries */
+
+/*tablet rules*/
+@media (min-width: 600px) {
+    header { text-size-adjust: 167%; }
+    body { 
+        grid-template-columns: 200px 1fr 200px; /*gap: 2em;*/
+        grid-template-areas: 'header header header'
+                             'nav main main'
+                             'nav aside aside'
+                             'footer footer footer';
+    }
+    nav ul { flex-direction: column; }
+    nav { background-color: var(--color-secondary); /*height: 100vh;*/ }
+    #main {
+        /*height: 60vh;*/
+    }
+    aside {
+        /*height: 40vh;*/
+        background-color: lightgrey;
+    }
+}
+/*desktop rules*/
+@media (min-width: 1033px) { /*adjusted for iPad 13 screen size (was getting desktop)*/
+    body { 
+        grid-template-areas: 'header header header'
+                             'nav main aside'
+                             'nav main aside'
+                             'footer footer footer';
+    }
+    aside {
+        background-color: var(--color-secondary); 
+        /*height: 100vh;*/
+    }
+    
+}
+
+/* a11y */
 
 /* skip link */
 .skip-link {
@@ -111,46 +165,4 @@ input:focus-visible {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-}
-
-/* media queries (mobile-first)*/
-/*tablet rules*/
-@media (min-width: 600px) {
-    header { text-size-adjust: 167%; }
-    body { 
-        grid-template-columns: 200px 1fr 200px; gap: 2em; 
-        grid-template-areas: 'header header header'
-                             'nav main main'
-                             'nav aside aside'
-                             'footer footer footer';
-    }
-    nav ul {
-        flex-direction: column;
-        
-    }
-    nav { background-color: var(--color-secondary); height: 100vh; }
-    #main {
-        height: 80vh;
-    }
-    aside {
-        height: 20vh;
-        background-color: lightgrey;
-    }
-}
-
-
-/*desktop rules*/
-@media (min-width: 1033px) { /*adjusted for iPad 13 screen size (was getting desktop)*/
-    body { 
-        grid-template-areas: 'header header header'
-                             'nav main aside'
-                             'nav main aside'
-                             'footer footer footer';
-    }
-    aside {
-        background-color: var(--color-secondary); 
-        height: 100vh;
-        margin: -1rem;
-    }
-    
 }
