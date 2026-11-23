@@ -76,7 +76,7 @@ nav ul li:hover {
     position: relative;
     margin: 1rem;
     padding: 1.5rem;
-    height: 10rem;
+    height: 120%;
     border-radius: 20px;
     box-shadow: 2px 2px 20px lightgrey
 }
@@ -84,6 +84,20 @@ nav ul li:hover {
     animation-name: move;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+}
+.card img {
+    height: 20rem;
+    width: 100%;
+
+}
+#welcome-img {
+    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
+}
+#panorama {
+    height: 7rem;
+    width: 100%;
 }
 /* aside */
 aside {
