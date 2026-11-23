@@ -66,20 +66,32 @@ nav ul li {
     flex-direction: column;
     /*grid-area: 4 / 1 / 4 / -1;*/
     background-color: white;
-    height: 75vh; /* this feels imperfect */
+    height: auto; /* this feels imperfect */
 }
 .card {
     flex: 1;
+    position: relative;
     margin: 1rem;
     padding: 1.5rem;
     height: 10rem;
     border-radius: 20px;
     box-shadow: 2px 2px 20px lightgrey
 }
+.card:hover, .card:focus-visible {
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
 /* aside */
 aside {
     grid-area: aside;
     background-color: white;
+}
+/* animation */
+@keyframes move {
+    0% { top: 5px; }
+    80% { top: -10px; }
+    100% { top: -8px; }
 }
 
 /* footer */
@@ -102,25 +114,22 @@ footer p {
 @media (min-width: 600px) {
     header { text-size-adjust: 167%; }
     body { 
-        grid-template-columns: 200px 1fr 200px; /*gap: 2em;*/
+        grid-template-columns: 200px 1fr 200px;
         grid-template-areas: 'header header header'
                              'nav main main'
                              'nav aside aside'
                              'footer footer footer';
     }
     nav ul { flex-direction: column; }
-    nav { background-color: var(--color-secondary); /*height: 100vh;*/ }
-    #main {
-        /*height: 60vh;*/
-    }
+    nav { background-color: var(--color-secondary); }
     aside {
-        /*height: 40vh;*/
         background-color: lightgrey;
     }
 }
 /*desktop rules*/
 @media (min-width: 1033px) { /*adjusted for iPad 13 screen size (was getting desktop)*/
     body { 
+        grid-template-columns: 200px 5fr 3fr;
         grid-template-areas: 'header header header'
                              'nav main aside'
                              'nav main aside'
@@ -157,12 +166,12 @@ input:focus-visible {
     outline: 3px solid red;
 }
 
-/* reduced motion */
-@media (prefers-reduced-motion: reduce) {
+/* reduced motion  OFF FOR TESTING */
+/*@media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-}
+}*/
