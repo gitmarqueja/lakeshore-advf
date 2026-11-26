@@ -62,29 +62,61 @@ nav ul li:hover { cursor: pointer; } /* is the cursor relevant to :focus-visible
     height: auto;
 }
 #back-link::before { content: "back to top"; }
+
+/* cards */
 .card {
-    flex: 1;
+    overflow: hidden;
     position: relative;
     margin: 1rem;
-    padding: 1.5rem;
+    /*padding: 1.5rem; this to general to put here*/
     height: 120%;
     border-radius: 20px;
-    box-shadow: 2px 2px 20px lightgrey
+    box-shadow: 2px 2px 20px lightgrey;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .card:hover, .card:focus-visible {
     animation-name: move;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
+
 .card img {
     height: 20rem;
     width: 100%;
-
+    border-radius: 20px;
+    object-fit: cover;
 }
 #welcome-img {
+    /*flex: 1;*/
     border-radius: 50%;
     height: 20rem;
     width: 20rem;
+}
+#img-crop {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    top: -3rem;
+    height: 10rem;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-image: url('circus.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+#img-crop:hover {
+    animation-name: pan;
+    animation-duration: 3s;
+}
+@keyframes pan {
+    0% { background-position: center; }
+    25% { background-position: bottom; }
+    50% { background-position: top; }
+    100% { background-position: center; }
 }
 
 /* aside */
@@ -129,8 +161,10 @@ footer p {
     nav { background-color: var(--color-secondary); }
     nav ul { flex-direction: column; }
     nav ul li { padding: 1rem 1rem 0.5rem; }
-    nav ul li:hover::before { content: '> '; color: grey; }
-    nav ul li:hover::after { content: ' --'; color: grey; }
+    nav ul li:hover::before, nav ul li:focus-visible::before
+        { content: '> '; color: grey; }
+    nav ul li:hover::after, nav ul li:focus-visible::after
+        { content: ' --'; color: grey; }
     aside { background-color: lightgrey; }
 }
 /*desktop rules*/
