@@ -23,6 +23,7 @@ body {
                          'aside'
                          'footer';
     background-color: lightgrey;
+    margin: 0;
 }
 /* header */
 header {
@@ -62,14 +63,16 @@ nav ul li:hover { cursor: pointer; } /* is the cursor relevant to :focus-visible
     height: auto;
 }
 #back-link::before { content: "back to top"; }
+.card h2, .welcome-img { align-self: center; }
+h3, #back-link { padding: 0 1rem}
+p, .card h3 { padding: 0 1.5rem; }
+
 
 /* cards */
 .card {
-    overflow: hidden;
-    position: relative;
     margin: 1rem;
-    /*padding: 1.5rem; this to general to put here*/
-    height: 120%;
+    height: auto;
+    position: relative;
     border-radius: 20px;
     box-shadow: 2px 2px 20px lightgrey;
     flex: 1;
@@ -81,48 +84,29 @@ nav ul li:hover { cursor: pointer; } /* is the cursor relevant to :focus-visible
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-
-.card img {
-    height: 20rem;
-    width: 100%;
-    border-radius: 20px;
-    object-fit: cover;
-}
-#welcome-img {
-    /*flex: 1;*/
+.welcome-img {
     border-radius: 50%;
     height: 20rem;
     width: 20rem;
 }
-#img-crop {
+.clip-img {
     overflow: hidden;
     display: block;
     position: relative;
-    top: -3rem;
-    height: 10rem;
+    height: 12rem;
     width: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    background-image: url('circus.jpg');
-    background-size: cover;
-    background-position: center;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    background-size: cover;
+    background-position: top;
 }
-#img-crop:hover {
+.circus { background-image: url('circus.jpg'); }
+.worldseries { background-image: url('worldseries.jpg'); }
+.worldseries:hover, .circus:hover,
+.worldseries:focus-visible, .circus:focus-visible {
     animation-name: pan;
     animation-duration: 3s;
-}
-@keyframes pan {
-    0% { background-position: center; }
-    25% { background-position: bottom; }
-    50% { background-position: top; }
-    100% { background-position: center; }
-}
-
-/* aside */
-aside {
-    grid-area: aside;
-    background-color: white;
 }
 
 /* animation */
@@ -131,19 +115,31 @@ aside {
     80% { top: -10px; }
     100% { top: -8px; }
 }
+@keyframes pan {
+    0% { background-position: center; }
+    25% { background-position: bottom; }
+    50% { background-position: center; }
+    100% { background-position: top; }
+}
+
+/* aside */
+aside {
+    grid-area: aside;
+    background-color: white;
+}
 
 /* footer */
 footer {
     grid-area: footer;
     background-color: var(--color-primary);
-    height: 10vh;
+    height: 5rem;
 }
 footer p {
     width: 15em;
     margin: 0 auto;
     color: white;
     text-align: center;
-    padding-top: 2.5em;
+    padding-top: 2em;
 }
 
 /* media queries */
@@ -178,31 +174,39 @@ footer p {
     }
     aside { background-color: var(--color-secondary); padding: 1rem; }
     nav { height: 150vmax; /* not sure how this works exactly but it works? */}
-    #back-link { display: none; }
+    #back-link { display: none; } /* this needs a way to auto-return to top when tabbed to bottom of page */
 }
 
 /* a11y */
 
+
+
 /* skip link */
 .skip-link {
     position: absolute;
-    top: -60px;
-    left: 0;
-    background: red;
-    color: white;
-    padding: .1em;
+    top: -50px;
+    left: 5px;
+    background: lightgrey;
+    color: black;
+    padding: .1em; 
     z-index: 100;
     text-decoration: none;
+    border-radius: 5px;
 }
 .skip-link:focus {
-    top: 0;
+    top: 10px;
 }
 
 /* focus visibility */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-    outline: 3px solid red;
+    outline: 3px solid orange;
+}
+
+/* attribute selector */
+[tabindex="0"]:focus-visible {
+    outline: none;
 }
 
 /* reduced motion  TURN OFF FOR TESTING */

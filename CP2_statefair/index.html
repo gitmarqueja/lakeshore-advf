@@ -19,10 +19,10 @@
         </ul>
     </nav>
     <main id="main">
-        <div class="card">
-            <h2>Welcome!&#128515</h2>
+        <div class="card" tabindex="0">
+            <h2>Welcome! &#128515</h2>
             <!-- Image from https://unsplash.com/photos/a-ferris-wheel-is-shown-against-a-blue-sky-D639atKvtKw -->
-            <img src="ferris.jpg" alt="upwards look at colorful ferris wheel" id="welcome-img">
+            <img src="ferris.jpg" alt="upwards look at colorful ferris wheel" class="welcome-img">
             <p>The time of year has finally come for the Wisconsin State Fair! 
                 This year's fair will not disappoint with fun for all ages. Take a 
                 break from busy life and come celebrate another year with your 
@@ -31,7 +31,7 @@
         </div>
         <h3>Featured Acts</h3>
         <div class="card">
-            <div id="img-crop">
+            <div class="circus clip-img" tabindex="0">
                 <!-- Image from https://unsplash.com/photos/a-large-circus-tent-with-lights-around-it-4GiRohKfs3w?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink --> 
                 <!--<img src="circus.jpg" alt="stunning image of circus tent at night">-->
             </div>
@@ -43,16 +43,19 @@
             </p>
         </div>
         <div class="card">
+            <div class="worldseries clip-img" tabindex="0">
+                <!-- Image from https://unsplash.com/photos/milwaukee-brewers-baseball-player-wall-mural-bt9zq9Y0ZBU -->
+                <!--<img src="worldseries.jpg" alt="stylized group portrait of brewers world series champion players">-->
+            </div>
             <h3>Brewers World Series Tour</h3>
-            <!-- Image from https://unsplash.com/photos/milwaukee-brewers-baseball-player-wall-mural-bt9zq9Y0ZBU -->
-            <img src="worldseries.jpg" alt="stylized group portrait of brewers world series champion players">
+            
             <p>The World Champion Milwaukee Brewers will be singing autographs at Victory Plaza! 
                 Now is your chance to get a photograph with legendary players of Brewers history. 
                 There will also be a merch sale for any of you who haven't got your world series champion gear yet!
             </p>
         </div>
     </main>
-    <aside>
+    <aside tabindex="0">
         <h3>Headliner Schedule</h3>
         <p>Clown World Takeover</p>
         <p>11/26/26 7:00PM <strong>main event</strong></p>
@@ -60,10 +63,12 @@
         <p>Brewers Autograph Signing</p>
         <p>11/26/26 2:00PM</p>
         <br>
-        <h3>parking</h3>
+        <h3>Parking</h3>
         <p>Parking will be provided free via our gracious sponsors</p>
-        <p>Sponsor 1</p>
-        <p>detail parking info</p>
+        <p><strong>Harley Davidson</strong></p>
+        <p>-The local store parking lot will be available all night in the main lot</p>
+        <p><strong>The Pfister Hotel</strong></p>
+        <p>-The hotel parking lot will be available all night at LOT E-H</p>
         <br>
         <a href="#main" id="back-link"></a>
     </aside>
